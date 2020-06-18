@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <boost/lexical_cast.hpp>
 template <class T>
 struct BTNode
 {
@@ -210,7 +211,7 @@ void XmlSerialize(const BTNode<T>* root, std::ostream& out = std::cout)
 	out << "</node>";
 }
 
-template<class T>
+/*template<class T>
 BTNode<T>* XMLDeserialize(std::istream& in = std::cin)
 {
 	char x;
@@ -228,7 +229,7 @@ BTNode<T>* XMLDeserialize(std::istream& in = std::cin)
 	std::string value;
 	getline(in, value, '"');
 	BTNode<T>* root = new BTNode<T>;
-	root->data = boost::lexical_cast<T>(value);
+	//root->data = boost::lexical_cast<T>(value);
 	in >> x; //>
 	getline(in, temp, '>'); //<left>
 	root->left = XMLDeserialize<T>(in);
@@ -241,7 +242,7 @@ BTNode<T>* XMLDeserialize(std::istream& in = std::cin)
 	return root;
 
 }
-
+*/
 int main()
 {
 	auto a = build_sample_tree();
